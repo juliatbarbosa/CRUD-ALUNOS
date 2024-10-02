@@ -1,0 +1,52 @@
+<%@page import="org.alunos.AlunoDAO"%>
+<%@page import="org.alunos.Aluno"%>
+<%@page import="org.libertas.PessoaDAO"%>
+<%@page import="org.libertas.Pessoa"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<%
+		int idaluno = Integer.parseInt(request.getParameter("id"));
+	Aluno a = new Aluno();
+	AlunoDAO adao = new AlunoDAO();
+	if (idaluno > 0) {
+		a = adao.consultar(idaluno);
+	} else {
+		p.setNome("");
+		p.setTelefone("");
+		p.setEmail("");
+		p.setCurso("");
+	}
+	%>
+
+	<form action="gravar.jsp" method="post">
+		<input type="hidden" name="idpessoa" value="<%= p.getIdpessoa() %>">
+		Nome:
+		<input type="text" name="nome"  value="<%= p.getNome() %>"/>
+		<br/><br/>
+		Telefone:
+		<input type="text" name="telefone"  value="<%= p.getTelefone() %>"/>
+		<br/><br/>
+		Email:
+		<input type="text" name="email"  value="<%= p.getEmail() %>"/>
+		<br/><br/>
+		Cidade:
+		<input type="text" name="cidade"  value="<%= p.getCidade() %>"/>
+		<br/><br/>
+		Endereço:
+		<input type="text" name="endereco"  value="<%= p.getEndereco() %>"/>
+		<br/><br/>
+		CEP:
+		<input type="text" name="cep"  value="<%= p.getCep() %>"/>
+		<br/><br/>
+		<input type="submit" value="Salvar">
+	</form>
+</body>
+</html>

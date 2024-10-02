@@ -1,0 +1,27 @@
+<%@page import="org.alunos.AlunoDAO"%>
+<%@page import="org.alunos.Aluno"%>
+<%@page import="org.libertas.Pessoa"%>
+<%@page import="org.libertas.PessoaDAO"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<%
+		Aluno a = new Aluno();
+		a.setIdaluno(Integer.parseInt(request.getParameter("id")));
+		
+		AlunoDAO dao = new AlunoDAO();
+		dao.excluir(a);
+		
+	response.sendRedirect("listar.jsp");
+	%>
+	
+	
+	
+</body>
+</html>

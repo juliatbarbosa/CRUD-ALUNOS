@@ -1,0 +1,60 @@
+<%@page import="org.libertas.Pessoa"%>
+<%@page import="org.libertas.PessoaDAO"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>IExcluir</title>
+<style>
+body {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;
+		background-color: #f9f9f9;
+	
+	}
+	
+	.conteudoTela {
+	background-color: white;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 2px 6px 0px rgba(0, 0, 0, 0.15);
+
+	width: 550px
+	}
+	
+	h1 {
+	margin-bottom:20px;
+	text-align: center;
+	font-size: 32px;
+	}
+	
+	
+	button a {
+	text-decoration: none;
+	color: white;
+}
+	.botoes {
+    display: flex;
+    flex-direction: column;
+	gap: 20px;
+	}
+</style>
+</head>
+<body>
+	<%
+		Pessoa p = new Pessoa();
+		p.setIdpessoa(Integer.parseInt(request.getParameter("id")));
+		
+		PessoaDAO dao = new PessoaDAO();
+		dao.excluir(p);
+		
+	%>
+	
+	<h1>Registro excluído com sucesso!</h1>
+	<a href="listar.jsp">Ok</a>
+</body>
+</html>

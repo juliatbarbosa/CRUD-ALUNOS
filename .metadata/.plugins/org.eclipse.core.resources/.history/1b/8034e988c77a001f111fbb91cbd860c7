@@ -1,0 +1,124 @@
+package org.alunos;
+
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.LinkedList;
+public class AlunoDAO {
+
+	public void salvar(Aluno a) {
+		if (a.getIdaluno() > 0) {
+			alterar(a);
+		} else {
+			inserir(a);
+		}
+	}
+	
+	public void inserir(Aluno a) {
+		//lista.add(p);
+		
+		Conexao con = new Conexao();
+		try {
+			String sql = "INSERT INTO pessoa (nome, telefone, email, cidade, endereco, cep)"
+					+ "VALUES (?,?,?,?,?,?)";
+			PreparedStatement prep = con.getConnection().prepareStatement(sql);
+			prep.setString(1, p.getNome());
+			prep.setString(2, p.getTelefone());
+			prep.setString(3, p.getEmail());
+			prep.setString(4, p.getCidade());
+			prep.setString(5, p.getEndereco());
+			prep.setString(6, p.getCep());
+			prep.execute();
+			} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		con.desconecta();
+	}
+	
+	public LinkedList<Pessoa> listar() {
+		LinkedList<Pessoa> lista = new LinkedList<Pessoa>();
+		Conexao con = new Conexao();
+		try {
+			String sql = "SELECT * FROM pessoa";
+			Statement sta = con.getConnection().createStatement();
+			ResultSet res = sta.executeQuery(sql);
+			while (res.next()) {
+				Pessoa p = new Pessoa();
+				p.setIdpessoa(res.getInt("idpessoa"));
+				p.setNome(res.getString("nome"));
+				p.setTelefone(res.getString("telefone"));
+				p.setEmail(res.getString("email"));
+				p.setCidade(res.getString("cidade"));
+				p.setEndereco(res.getString("endereco"));
+				p.setCep(res.getString("cep"));
+				lista.add(p);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		con.desconecta();
+		return lista;
+	}
+	
+	public void alterar(Aluno a) {
+		Conexao con = new Conexao();
+		try {
+			String sql = "UPDATE pessoa SET "
+					+ " nome = ?, telefone = ?, "
+					+ "email = ?, curso = ?"
+					+ "WHERE idaluno = ?";
+			PreparedStatement prep = con.getConnection().prepareStatement(sql);
+			prep.setString(1, a.getNome());
+			prep.setString(2, a.getTelefone());
+			prep.setString(3, a.getEmail());
+			prep.setString(4, a.getCidade());
+			prep.setString(5, a.getEndereco());
+			prep.setString(6, a.getCep());
+			prep.setInt(7, a.getIdpessoa());
+			prep.execute();
+			} catch (Exception e) {
+			e.printStackTrace();
+		}
+		con.desconecta();
+	}
+	
+	public void excluir(Aluno a) {
+		Conexao con = new Conexao();
+		try {
+			String sql = "DELETE FROM aluno "
+					+ "WHERE idaluno = ?";
+			PreparedStatement prep = con.getConnection().prepareStatement(sql);
+			prep.setInt(1, a.getIdaluno());
+			prep.execute();
+			} catch (Exception e) {
+			e.printStackTrace();
+		}
+		con.desconecta();
+	}
+	
+	public Aluno consultar(int id) {
+		Aluno a = new Aluno();
+		Conexao con = new Conexao();
+		try {
+			String sql = "SELECT * FROM aluno WHERE idaluno = " + id;
+			Statement sta = con.getConnection().createStatement();
+			ResultSet res = sta.executeQuery(sql);
+			while (res.next()) {
+				a.setIdaluno(res.getInt("idaluno"));
+				a.setNome(res.getString("nome"));
+				a.setTelefone(res.getString("telefone"));
+				a.setEmail(res.getString("email"));
+				a.setCurso(res.getString("curso"));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		con.desconecta();
+		return a;
+	}
+
+}
+

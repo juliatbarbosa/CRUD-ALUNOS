@@ -1,0 +1,13 @@
+INDEX VERSION 1.4+C:\Users\teixe\eclipse-workspace\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+2724519699.index
+1866167541.index
+3326471160.index
+3266240581.index
+3326471160.index
+1842380217.index
+1190214142.index
+213330840.index
+2644414101.index
+790982936.index
+3584760317.index
+2724519699.index

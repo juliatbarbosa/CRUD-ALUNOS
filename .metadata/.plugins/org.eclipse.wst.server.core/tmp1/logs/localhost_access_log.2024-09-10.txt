@@ -1,0 +1,17 @@
+127.0.0.1 - - [10/Sep/2024:20:10:46 -0300] "GET / HTTP/1.1" 404 764
+0:0:0:0:0:0:0:1 - - [10/Sep/2024:20:10:48 -0300] "GET /OlaMundo/cadastrobean/formulario.jsp HTTP/1.1" 200 519
+0:0:0:0:0:0:0:1 - - [10/Sep/2024:20:10:48 -0300] "GET /favicon.ico HTTP/1.1" 404 775
+0:0:0:0:0:0:0:1 - - [10/Sep/2024:20:12:09 -0300] "POST /OlaMundo/cadastrobean/gravar.jsp HTTP/1.1" 200 212
+0:0:0:0:0:0:0:1 - - [10/Sep/2024:20:12:12 -0300] "GET /OlaMundo/cadastrobean/index.jsp HTTP/1.1" 200 133
+0:0:0:0:0:0:0:1 - - [10/Sep/2024:20:12:16 -0300] "GET /OlaMundo/cadastro/index.jsp HTTP/1.1" 200 254
+0:0:0:0:0:0:0:1 - - [10/Sep/2024:20:12:19 -0300] "GET /OlaMundo/cadastro/listar.jsp HTTP/1.1" 200 13043
+0:0:0:0:0:0:0:1 - - [10/Sep/2024:20:12:56 -0300] "GET /OlaMundo/cadastro/excluir.jsp?id=57 HTTP/1.1" 200 213
+0:0:0:0:0:0:0:1 - - [10/Sep/2024:20:12:59 -0300] "GET /OlaMundo/cadastro/listar.jsp HTTP/1.1" 200 13679
+0:0:0:0:0:0:0:1 - - [10/Sep/2024:20:15:50 -0300] "GET /OlaMundo/cadastrobean/formulario.jsp HTTP/1.1" 200 643
+0:0:0:0:0:0:0:1 - - [10/Sep/2024:20:16:01 -0300] "POST /OlaMundo/cadastrobean/gravar.jsp HTTP/1.1" 200 212
+0:0:0:0:0:0:0:1 - - [10/Sep/2024:20:16:02 -0300] "GET /OlaMundo/cadastrobean/index.jsp HTTP/1.1" 200 133
+0:0:0:0:0:0:0:1 - - [10/Sep/2024:20:16:07 -0300] "GET /OlaMundo/cadastro/index.jsp HTTP/1.1" 200 254
+0:0:0:0:0:0:0:1 - - [10/Sep/2024:20:16:10 -0300] "GET /OlaMundo/cadastro/listar.jsp HTTP/1.1" 200 14108
+0:0:0:0:0:0:0:1 - - [10/Sep/2024:20:16:54 -0300] "GET /OlaMundo/cadastrobean/index.jsp HTTP/1.1" 200 258
+0:0:0:0:0:0:0:1 - - [10/Sep/2024:20:16:56 -0300] "GET /OlaMundo/cadastrobean/listar.jsp HTTP/1.1" 404 770
+0:0:0:0:0:0:0:1 - - [10/Sep/2024:20:22:08 -0300] "GET /OlaMundo/cadastrobean/listar.jsp HTTP/1.1" 404 770

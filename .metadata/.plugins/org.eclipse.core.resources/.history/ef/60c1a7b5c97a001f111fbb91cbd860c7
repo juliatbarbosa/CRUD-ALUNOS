@@ -1,0 +1,24 @@
+<%@page import="org.libertas.Pessoa"%>
+<%@page import="org.libertas.PessoaDAO"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<%
+		A p = new Pessoa();
+		p.setIdpessoa(Integer.parseInt(request.getParameter("id")));
+		
+		PessoaDAO dao = new PessoaDAO();
+		dao.excluir(p);
+		
+	%>
+	
+	<h1>Registro excluído com sucesso!</h1>
+	<a href="listar.jsp">Ok</a>
+</body>
+</html>

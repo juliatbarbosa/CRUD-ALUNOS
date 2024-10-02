@@ -1,0 +1,17 @@
+package org.alunos;
+
+public class Aluno {
+
+	private int idaluno;
+	private String nome;
+	private String telefone;
+	private String email;
+	private String curso;
+	
+	
+	
+	public String toString() {
+		return "";
+	}
+}
+

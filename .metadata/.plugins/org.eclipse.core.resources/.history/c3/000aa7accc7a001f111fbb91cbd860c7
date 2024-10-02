@@ -1,0 +1,48 @@
+<%@page import="org.alunos.Aluno"%>
+<%@page import="org.alunos.AlunoDAO"%>
+<%@page import="org.libertas.Pessoa"%>
+<%@page import="org.libertas.PessoaDAO"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+v
+</head>
+<body>
+	<h1>Cadastro de Alunos</h1>
+	<a href="formulario.jsp?id=0">Novo aluno</a>
+	<table border="1">
+		<th>Matrícula</th>
+		<th>Nome</th>
+		<th>Telefone</th>
+		<th>Email</th>
+		<th>Curso</th>
+		<th></th>
+		<th></th>
+		
+		<%
+			AlunoDAO dao = new AlunoDAO();
+			for (Aluno a : dao.listar()) {
+				out.print("<tr>");
+				out.print("<td>" + a.getIdaluno() + "</td>");
+				out.print("<td>" + a.getNome() + "</td>");
+				out.print("<td>" + a.getTelefone() + "</td>");
+				out.print("<td>" + a.getEmail() + "</td>");
+				out.print("<td>" + a.getCurso() + "</td>");
+				out.print("<td>");
+				out.print("<a href='formulario.jsp?id=" + a.getIdaluno() +"'> Alterar </a>");
+				out.print("</td>");
+				out.print("<td>");
+				out.print("<a href='excluir.jsp?id=" + a.getIdaluno() +"'> Excluir </a>");
+				out.print("</td>");
+				out.print("</tr>");
+			}
+		%>
+	</table>
+	
+	<a href="index.jsp">Início</a>
+</body>
+</html>
